@@ -7,41 +7,45 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="flex items-center">
+    <header className="flex items-center sticky top-0 z-50 border-b bg-black backdrop-blur px-4 py-3">
       {/* This is the name section of the header's title */}
-      <div className="flex shrink-0 items-center">
-        <span className="text-2xl font-bold tracking-tight">Xekyute</span>
+      <div className="max-w-7xl mx-auto px-4 flex w-full items-center justify-between flex-row">
+        <div className="flex shrink-0 items-center">
+          <span className="text-2xl font-bold tracking-tight">Xekyute</span>
+        </div>
+
+        {/* Toggle button */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)} //onClick={() => setIsMenuOpen((v) => !v)}
+          className="flex items-center gap-2 p-2 text-white focus:outline-none"
+          aria-label="toggle menu"
+          aria-expanded={isMenuOpen}
+          aria-controls="primary-navigation"
+        >
+          {/* label */}
+          <span className="text-2xl font-bold tracking-tight">Menu</span>
+
+          {/* 2-bar icon */}
+          <span className="relative block w-6 h-4">
+            {/* top bar */}
+            <span
+              className={[
+                "absolute left-1/2 w-6 h-0.5 bg-current -translate-x-1/2 transition-all duration-300 ease-in-out",
+                isMenuOpen ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0",
+              ].join(" ")}
+            />
+            {/* Bottom bar */}
+            <span
+              className={[
+                "absolute left-1/2 w-6 h-0.5 bg-current -translate-x-1/2 transition-all duration-300 ease-in-out",
+                isMenuOpen
+                  ? "bottom-1/2 translate-y-1/2 -rotate-45"
+                  : "bottom-0",
+              ].join(" ")}
+            />
+          </span>
+        </button>
       </div>
-
-      {/* Toggle button */}
-      <button
-        onClick={() => setIsMenuOpen(!isMenuOpen)} //onClick={() => setIsMenuOpen((v) => !v)}
-        className="ml-auto flex items-center gap-2 p-2 text-white focus:outline-none"
-        aria-label="toggle menu"
-        aria-expanded={isMenuOpen}
-        aria-controls="primary-navigation"
-      >
-        {/* label */}
-        <span className="text-sm font-medium">Menu</span>
-
-        {/* 2-bar icon */}
-        <span className="relative block w-6 h-4">
-          {/* top bar */}
-          <span
-            className={[
-              "absolute left-1/2 w-6 h-0.5 bg-current -translate-x-1/2 transition-all duration-300 ease-in-out",
-              isMenuOpen ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0",
-            ].join(" ")}
-          />
-          {/* Bottom bar */}
-          <span
-            className={[
-              "absolute left-1/2 w-6 h-0.5 bg-current -translate-x-1/2 transition-all duration-300 ease-in-out",
-              isMenuOpen ? "bottom-1/2 translate-y-1/2 -rotate-45" : "bottom-0",
-            ].join(" ")}
-          />
-        </span>
-      </button>
 
       {/* Conditional Menu / Overlay container (always rendered so we can animate) */}
       <div
