@@ -172,7 +172,7 @@ const Header = () => {
           "absolute left-0 right-0 top-full z-40",
           "transition duration-300 ease-in-out will-change-transform",
           "motion-reduce:transition-none motion-reduce:transform-none motion-reduce:opacity-100",
-          "bg-zinc-900/95 border border-white/10 shadow-2xl backdrop-blur",
+          "bg-zinc-900/95 border border-white/10 shadow-2xl backdrop-blur rounded-b-xl",
           "origin-top",
           isMenuOpen
             ? "opacity-100 translate-y-0"
