@@ -12,8 +12,8 @@
   --font-mono: var(--font-geist-mono);
 
   /* brand colors */
-  --color-brand-dark: #09231B;
-  --color-brand-light: #00FFB2;
+  --color-brand-dark: #09231b;
+  --color-brand-light: #00ffb2;
 }
 
 @media (prefers-color-scheme: dark) {
