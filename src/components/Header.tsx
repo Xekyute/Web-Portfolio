@@ -198,7 +198,12 @@ const Header = () => {
                   <a
                     ref={i === 0 ? firstLinkRef : undefined}
                     href={item.href}
-                    className="block rounded-lg px-4 py-3 text-left text-white/90 hover:bg-brand-dark hover:text-brand-light focus:outline-none"
+                    className={[
+                      "block rounded-lg px-4 py-3 text-left text-white/90 hover:bg-brand-dark hover:text-brand-light focus:outline-none",
+                      isMenuOpen
+                        ? "animate-slide-in"
+                        : "opacity-0 -translate-x-2",
+                    ].join(" ")}
                     tabIndex={isMenuOpen ? 0 : -1}
                     onClick={() => setIsMenuOpen(false)}
                   >

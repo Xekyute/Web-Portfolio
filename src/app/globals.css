@@ -1,4 +1,31 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Keyframes (keep as-is) */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Plain class (works in v3 & v4) */
+.animate-slide-in {
+  animation: slide-in 300ms ease-out both; /* both keeps the final state */
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-slide-in {
+    animation: none;
+  }
+}
 
 :root {
   --background: #ffffff;
