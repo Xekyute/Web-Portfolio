@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 // Stagger delay for list items: 0ms, 60ms, 120ms...
 const itemDelay = (i: number) => `${i * 60}ms`;
