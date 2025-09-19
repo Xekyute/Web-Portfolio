@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Keyframes (keep as-is) */
+/* Keyframes */
 @keyframes slide-in {
   from {
     opacity: 0;
@@ -15,18 +15,17 @@
   }
 }
 
-/* Plain class (works in v3 & v4) */
 .animate-slide-in {
-  animation: slide-in 300ms ease-out both; /* both keeps the final state */
+  animation: slide-in 300ms ease-out both;
 }
 
-/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .animate-slide-in {
     animation: none;
   }
 }
 
+/* Theme tokens */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -35,10 +34,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  /* Fonts from Geist */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  /* brand colors */
+  /* Brand colors */
   --color-brand-dark: #09231b;
   --color-brand-light: #00ffb2;
 }
@@ -50,8 +51,8 @@
   }
 }
 
+/* Apply theme globally */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }

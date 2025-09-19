@@ -1,6 +1,10 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link"; // 👈 client-side navigation
+
+// Stagger delay: 0ms, 60ms, 120ms...
+const itemDelay = (i: number) => `${i * 60}ms`;
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -62,7 +66,6 @@ const Header = () => {
     const headerBottom = headerRef.current?.getBoundingClientRect().bottom ?? 0;
     const y = e.clientY;
     if (y > headerBottom + 4) {
-      // 👈 tiny buffer
       clearCloseTimer();
       closeTimerRef.current = window.setTimeout(
         () => setIsMenuOpen(false),
@@ -113,9 +116,15 @@ const Header = () => {
       {/* Top bar (brand + toggle) */}
       <div className="max-w-3xl md:max-w-5xl lg:max-w-7xl mx-auto px-4 flex w-full items-center justify-between">
         <div className="flex shrink-0 items-center">
-          <span className="text-xl md:text-2xl font-bold tracking-tight text-white">
+          {/* Brand goes Home via client-side nav */}
+          <Link
+            href="/"
+            className="text-xl md:text-2xl font-bold tracking-tight text-brand-light font-mono hover:opacity-80 transition-opacity"
+            aria-label="Home"
+            onClick={() => setIsMenuOpen(false)}
+          >
             Xekyute
-          </span>
+          </Link>
         </div>
 
         {/* Toggle button */}
@@ -123,11 +132,11 @@ const Header = () => {
           ref={buttonRef}
           onClick={() => setIsMenuOpen((v) => !v)}
           className="flex items-center gap-2 p-2 text-white focus:outline-none rounded-lg"
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"} // 👈 dynamic label
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
           aria-controls={panelId}
         >
-          <span className="text-xl md:text-2xl font-bold tracking-tight">
+          <span className="text-xl md:text-2xl font-bold tracking-tight font-mono">
             Menu
           </span>
           <span className="relative block w-6 h-4">
@@ -162,15 +171,15 @@ const Header = () => {
         />
       )}
 
-      {/* Dropdown panel (outer div has no role; inner <nav> provides semantics) */}
+      {/* Dropdown panel: same for desktop & mobile */}
       <div
         ref={panelRef}
         id={panelId}
-        aria-hidden={!isMenuOpen} // hide from SRs when closed
-        onKeyDown={onPanelKeyDown} // focus trap
+        aria-hidden={!isMenuOpen}
+        onKeyDown={onPanelKeyDown}
         className={[
           "absolute left-0 right-0 top-full z-40",
-          "transition duration-300 ease-in-out will-change-transform",
+          "transition-[transform,opacity] duration-300",
           "motion-reduce:transition-none motion-reduce:transform-none motion-reduce:opacity-100",
           "bg-zinc-900/95 border border-white/10 shadow-2xl backdrop-blur rounded-b-xl",
           "origin-top",
@@ -178,37 +187,48 @@ const Header = () => {
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-2 pointer-events-none",
         ].join(" ")}
+        style={{ transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}
         onPointerEnter={hasFinePointer ? handlePointerEnter : undefined}
         onPointerLeave={hasFinePointer ? handlePointerLeave : undefined}
       >
         <div className="max-w-3xl md:max-w-5xl lg:max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <nav aria-label="Primary">
-            {" "}
-            {/* keep semantics here */}
             <ul className="p-3">
               {[
-                { href: "#", label: "Home" },
-                { href: "#", label: "About" },
-                { href: "#", label: "Skills" },
-                { href: "#", label: "Experience" },
-                { href: "#", label: "Projects" },
-                { href: "#", label: "Contact" },
+                { href: "/", label: "Home" },
+                { href: "/about", label: "About" },
+                { href: "/skills", label: "Skills" },
+                { href: "/experience", label: "Experience" },
+                { href: "/projects", label: "Projects" },
+                { href: "/contact", label: "Contact" },
               ].map((item, i) => (
-                <li key={item.label}>
-                  <a
+                <li
+                  key={item.label}
+                  className={[
+                    "transition-[transform,opacity] duration-300",
+                    isMenuOpen
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 -translate-y-1.5",
+                    "motion-reduce:transition-none motion-reduce:transform-none motion-reduce:opacity-100",
+                  ].join(" ")}
+                  style={{
+                    transitionDelay: isMenuOpen ? itemDelay(i) : "0ms",
+                    transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+                  }}
+                >
+                  <Link
                     ref={i === 0 ? firstLinkRef : undefined}
                     href={item.href}
                     className={[
-                      "block rounded-lg px-4 py-3 text-left text-white/90 hover:bg-brand-dark hover:text-brand-light focus:outline-none",
-                      isMenuOpen
-                        ? "animate-slide-in"
-                        : "opacity-0 -translate-x-2",
+                      "block rounded-lg px-4 py-3 text-left text-white/90",
+                      "hover:bg-brand-dark hover:text-brand-light focus:outline-none",
+                      "font-mono tracking-wide",
                     ].join(" ")}
                     tabIndex={isMenuOpen ? 0 : -1}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
