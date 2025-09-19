@@ -13,9 +13,9 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={GeistMono.variable}>
-      {/* Use className (not only variable) to force Geist Sans */}
-      <body className={`${GeistSans.className} font-sans antialiased`}>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      {/* Only set the *class mapping* here (font-sans), not the font directly */}
+      <body className="font-sans antialiased">
         <Header />
         {children}
       </body>

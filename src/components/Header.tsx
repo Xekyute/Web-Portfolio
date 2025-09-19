@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Link from "next/link"; // 👈 client-side navigation
-
-// Stagger delay: 0ms, 60ms, 120ms...
+import Link from "next/link";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+// Stagger delay for list items: 0ms, 60ms, 120ms...
 const itemDelay = (i: number) => `${i * 60}ms`;
 
-const Header = () => {
+const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasFinePointer, setHasFinePointer] = useState(false);
 
@@ -45,13 +46,14 @@ const Header = () => {
 
   // Close on Escape
   useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) =>
-      e.key === "Escape" && setIsMenuOpen(false);
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsMenuOpen(false);
+    };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
-  // ---- pointer-leave-downward logic (with 4px threshold) ----
+  // --- leave-downward logic (with 4px buffer) ---
   const clearCloseTimer = () => {
     if (closeTimerRef.current != null) {
       window.clearTimeout(closeTimerRef.current);
@@ -64,8 +66,7 @@ const Header = () => {
   const handlePointerLeave = (e: React.PointerEvent) => {
     if (!hasFinePointer) return;
     const headerBottom = headerRef.current?.getBoundingClientRect().bottom ?? 0;
-    const y = e.clientY;
-    if (y > headerBottom + 4) {
+    if (e.clientY > headerBottom + 4) {
       clearCloseTimer();
       closeTimerRef.current = window.setTimeout(
         () => setIsMenuOpen(false),
@@ -73,12 +74,11 @@ const Header = () => {
       );
     }
   };
-  // -----------------------------------------------------------
+  // ------------------------------------------------
 
-  // ---- focus trap inside panel while open -------------------
+  // Focus trap inside panel while open
   const onPanelKeyDown = (e: React.KeyboardEvent) => {
     if (!isMenuOpen || e.key !== "Tab") return;
-
     const panel = panelRef.current;
     if (!panel) return;
 
@@ -104,7 +104,6 @@ const Header = () => {
       last.focus();
     }
   };
-  // -----------------------------------------------------------
 
   return (
     <header
@@ -116,10 +115,10 @@ const Header = () => {
       {/* Top bar (brand + toggle) */}
       <div className="max-w-3xl md:max-w-5xl lg:max-w-7xl mx-auto px-4 flex w-full items-center justify-between">
         <div className="flex shrink-0 items-center">
-          {/* Brand goes Home via client-side nav */}
+          {/* Brand → Home (client-side) */}
           <Link
             href="/"
-            className="text-xl md:text-2xl font-bold tracking-tight text-brand-light font-mono hover:opacity-80 transition-opacity"
+            className={`text-xl md:text-2xl font-bold tracking-tight text-brand-light hover:opacity-80 transition-opacity ${GeistMono.className}`}
             aria-label="Home"
             onClick={() => setIsMenuOpen(false)}
           >
@@ -136,16 +135,18 @@ const Header = () => {
           aria-expanded={isMenuOpen}
           aria-controls={panelId}
         >
-          <span className="text-xl md:text-2xl font-bold tracking-tight font-mono">
+          <span className="text-xl md:text-2xl font-bold tracking-tight">
             Menu
           </span>
           <span className="relative block w-6 h-4">
+            {/* top bar */}
             <span
               className={[
                 "absolute left-1/2 w-6 h-0.5 bg-current -translate-x-1/2 transition-all duration-300 ease-in-out",
                 isMenuOpen ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0",
               ].join(" ")}
             />
+            {/* bottom bar */}
             <span
               className={[
                 "absolute left-1/2 w-6 h-0.5 bg-current -translate-x-1/2 transition-all duration-300 ease-in-out",
@@ -171,7 +172,7 @@ const Header = () => {
         />
       )}
 
-      {/* Dropdown panel: same for desktop & mobile */}
+      {/* Dropdown panel */}
       <div
         ref={panelRef}
         id={panelId}
@@ -193,7 +194,9 @@ const Header = () => {
       >
         <div className="max-w-3xl md:max-w-5xl lg:max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <nav aria-label="Primary">
-            <ul className="p-3">
+            <ul className={`p-3 ${GeistMono.className}`}>
+              {" "}
+              {/* dropdown in mono */}
               {[
                 { href: "/", label: "Home" },
                 { href: "/about", label: "About" },
@@ -222,7 +225,7 @@ const Header = () => {
                     className={[
                       "block rounded-lg px-4 py-3 text-left text-white/90",
                       "hover:bg-brand-dark hover:text-brand-light focus:outline-none",
-                      "font-mono tracking-wide",
+                      "text-lg font-medium", // ⟵ sans like vx6Fid
                     ].join(" ")}
                     tabIndex={isMenuOpen ? 0 : -1}
                     onClick={() => setIsMenuOpen(false)}
