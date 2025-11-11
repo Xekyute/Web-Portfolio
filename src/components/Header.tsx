@@ -197,12 +197,12 @@ const Header: React.FC = () => {
               {" "}
               {/* dropdown in mono */}
               {[
-                { href: "/", label: "Home" },
-                { href: "/about", label: "About" },
-                { href: "/skills", label: "Skills" },
-                { href: "/experience", label: "Experience" },
-                { href: "/projects", label: "Projects" },
-                { href: "/contact", label: "Contact" },
+                { href: "#home", label: "Home" },
+                { href: "#about", label: "About" },
+                { href: "#skills", label: "Skills" },
+                { href: "#experience", label: "Experience" },
+                { href: "#projects", label: "Projects" },
+                { href: "#contact", label: "Contact" },
               ].map((item, i) => (
                 <li
                   key={item.label}

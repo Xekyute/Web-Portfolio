@@ -13,7 +13,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html
+      lang="en"
+      className={`${GeistSans.variable} ${GeistMono.variable} scroll-smooth`}
+    >
       {/* Only set the *class mapping* here (font-sans), not the font directly */}
       <body className="font-sans antialiased">
         <Header />
