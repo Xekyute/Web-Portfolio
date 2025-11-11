@@ -129,7 +129,7 @@ const Header: React.FC = () => {
         <button
           ref={buttonRef}
           onClick={() => setIsMenuOpen((v) => !v)}
-          className="flex items-center gap-2 p-2 text-white focus:outline-none rounded-lg"
+          className="flex items-center gap-2 p-2 text-[rgb(224,224,224)] focus:outline-none rounded-lg"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
           aria-controls={panelId}
@@ -222,7 +222,7 @@ const Header: React.FC = () => {
                     ref={i === 0 ? firstLinkRef : undefined}
                     href={item.href}
                     className={[
-                      "block rounded-md px-3 py-2 text-left text-lg text-white/90 hover:bg-brand-dark hover:text-brand-light focus:outline-none",
+                      "block rounded-md px-3 py-2 text-left text-lg font-medium text-[rgb(224,224,224)] hover:bg-brand-dark hover:text-brand-light focus:outline-none",
                       "font-mono", // optional
                       isMenuOpen && "opacity-100",
                     ]
