@@ -96,14 +96,20 @@ export default function ParticlesBackground() {
         },
 
         /* ----- Node Appearance ----- */
-        color: { value: "#00ffb2" }, // Neon mint nodes
+        color: { value: "#e62424" }, // Neon mint nodes
         opacity: { value: 0.55 }, // Soft glow
+        animation: {
+          enable: true,
+          speed: 0.3,
+          minimumValue: 0.35,
+          sync: false,
+        },
         shape: { type: "circle" }, // Circles (you can try "triangle", "edge", etc.)
         size: { value: { min: 0.8, max: 2.2 } }, // Subtle size variety = organic feel
 
         /* ----- Connections (the web) ----- */
         links: {
-          color: "#00ffb2", // Link color (match node color for cohesion)
+          color: "#e62424", // Link color (match node color for cohesion)
           distance: 150, // Max distance to draw a line
           enable: true, // Turn lines on
           opacity: 0.45, // Line transparency

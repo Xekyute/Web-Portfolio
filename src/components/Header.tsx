@@ -107,7 +107,7 @@ const Header: React.FC = () => {
   return (
     <header
       ref={headerRef}
-      className="relative flex items-center sticky top-0 z-50 border-b bg-black/95 backdrop-blur px-4 md:px-6 lg:px-8 py-2 md:py-3"
+      className="relative flex items-center sticky top-0 z-50 border-b border-[rgb(224,224,224)]/30 bg-black/95 backdrop-blur px-4 md:px-6 lg:px-8 py-2 md:py-3"
       onPointerEnter={hasFinePointer ? handlePointerEnter : undefined}
       onPointerLeave={hasFinePointer ? handlePointerLeave : undefined}
     >
@@ -129,7 +129,7 @@ const Header: React.FC = () => {
         <button
           ref={buttonRef}
           onClick={() => setIsMenuOpen((v) => !v)}
-          className="flex items-center gap-2 p-2 rounded-lg text-[rgb(224,224,224)] hover:text-[#00FFB2] transition-colors duration-300 focus:outline-none"
+          className="group flex items-center gap-2 p-2 rounded-lg text-[rgb(224,224,224)] hover:text-brand-light transition-colors duration-300 focus:outline-none"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
           aria-controls={panelId}
