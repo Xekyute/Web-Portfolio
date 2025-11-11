@@ -129,7 +129,7 @@ const Header: React.FC = () => {
         <button
           ref={buttonRef}
           onClick={() => setIsMenuOpen((v) => !v)}
-          className="flex items-center gap-2 p-2 text-[rgb(224,224,224)] focus:outline-none rounded-lg"
+          className="flex items-center gap-2 p-2 rounded-lg text-[rgb(224,224,224)] hover:text-[#00FFB2] transition-colors duration-300 focus:outline-none"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
           aria-controls={panelId}
@@ -209,12 +209,12 @@ const Header: React.FC = () => {
                   className={[
                     "transition-[transform,opacity] duration-300",
                     isMenuOpen
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 -translate-y-1.5",
+                      ? "opacity-100 translate-x-0"
+                      : "opacity-0 -translate-x-3",
                     "motion-reduce:transition-none motion-reduce:transform-none motion-reduce:opacity-100",
                   ].join(" ")}
                   style={{
-                    transitionDelay: isMenuOpen ? itemDelay(i) : "0ms",
+                    transitionDelay: "0ms",
                     transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
                   }}
                 >
@@ -223,6 +223,7 @@ const Header: React.FC = () => {
                     href={item.href}
                     className={[
                       "block rounded-md px-3 py-2 text-left text-lg font-medium text-[rgb(224,224,224)] hover:bg-brand-dark hover:text-brand-light focus:outline-none",
+                      "transition-colors duration-300",
                       "font-mono", // optional
                       isMenuOpen && "opacity-100",
                     ]
