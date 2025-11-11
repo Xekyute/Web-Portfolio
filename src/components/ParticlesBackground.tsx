@@ -72,7 +72,7 @@ export default function ParticlesBackground() {
         events: {
           onHover: { enable: true, mode: "grab" },
           // onClick: { enable: true, mode: "repulse" }, // Optional breakup on click
-          resize: true,
+          resize: { enable: true },
         },
         modes: {
           grab: { distance: 180, links: { opacity: 0.75 } },
