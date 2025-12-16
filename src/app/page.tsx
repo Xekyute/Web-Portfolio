@@ -15,15 +15,19 @@ export default function Home() {
           </h1>
           <p className="text-gray-400 text-lg mt-4">Further Info</p>
         </div>
+        <div className="absolute bottom-0 left-0 w-full h-32 bg_gradient-to-b from-transparent to-[#0a0a0a]" />
       </section>
 
       {/* About */}
       <section id="about" className="py-16 md:py-24 scroll-mt-24">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-semibold text-[rgb(224,224,224)]">
-            About
+            About Me
           </h2>
-          <p className="mt-4 text-gray-400">Short Intro...</p>
+          <p className="mt-4 text-gray-400">
+            Write your intro here. This section now has its own solid
+            background.
+          </p>
         </div>
       </section>
 
