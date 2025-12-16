@@ -3,7 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Keyframes */
+/* ---------------- COMPONENTS ---------------- */
+@layer components {
+  .section-heading {
+    @apply font-mono font-extrabold tracking-tight text-[rgb(224,224,224)];
+    word-spacing: -0.35em;
+  }
+}
+
+/* ---------------- ANIMATIONS ---------------- */
 @keyframes slide-in {
   from {
     opacity: 0;
@@ -25,7 +33,7 @@
   }
 }
 
-/* Theme tokens */
+/* ---------------- THEME TOKENS ---------------- */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -37,7 +45,6 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  /* Brand colors */
   --color-brand-dark: #0a0a0a;
   --color-brand-light: #e62424;
 }
@@ -49,7 +56,7 @@
   }
 }
 
-/* Apply theme globally */
+/* ---------------- GLOBAL BASE ---------------- */
 body {
   background: var(--background);
   color: var(--foreground);
