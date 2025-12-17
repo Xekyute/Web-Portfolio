@@ -1,5 +1,30 @@
 import ParticlesBackground from "@/components/ParticlesBackground";
 
+function SkillCard({ title, items }: { title: string; items: string[] }) {
+  return (
+    <div
+      className="rounded-2xl border-1 border-white/10 bg-zinc-950/30 p-6 md:p-8 
+    transition-colors duration-300 hover:border-white"
+    >
+      <h3 className="text-xl md:text-2xl font-bold text-[rgb(224,224,224)]">
+        {title}
+      </h3>
+
+      <div className="mt-5 flex flex-wrap gap-2">
+        {items.map((item) => (
+          <span
+            key={item}
+            className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-gray-200 
+            transition hover:border-white/35 hover:bg-white/10"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main className="relative bg-black">
@@ -101,12 +126,59 @@ export default function Home() {
         id="skills"
         className="relative z-10 bg-zinc-900 py-16 md:py-24 scroll-mt-24"
       >
-        <div className="mx-auto max-w-6xl px-4 md:px-6">
+        <div className="container mx-auto max-w-6xl px-4 md:px-6">
           <h2 className="section-heading text-center text-4xl md:text-5xl font-extrabold text-[rgb(224,224,224)]">
             Skills
           </h2>
+
           {/* Content */}
-          <div className="mt-12">{/* cards/grid etc */}</div>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <SkillCard
+              title="Frontend Development & Delivery"
+              items={[
+                "React.js",
+                "Next.js (App Router, File-Based Routing)",
+                "Tailwind CSS",
+                "Responsive, Component-Based UI",
+                "Visual Hierarchy, Typogrtaphy & Layout",
+                "Git & GitHub (Iterative Development, Refactoring)",
+                "local → Production Workflow",
+                "User-First Design Decisions",
+              ]}
+            />
+
+            <SkillCard
+              title="Programming & Software Development"
+              items={[
+                "Scala (Functional Programming Concepts)",
+                "Clean, Modular Code Design",
+                "Debugging & Systematic Problem Solving",
+                "Building Small, Structured Applications",
+              ]}
+            />
+
+            <SkillCard
+              title="Cybersecurity Foundations"
+              items={[
+                "Data Protection & Privacy Fundamentals",
+                "GDPR & Regulatory Awareness",
+                "DPIA",
+                "Threat Modeling",
+                "Basic Risk Assessment & Mitigation Principles",
+              ]}
+            />
+
+            <SkillCard
+              title="Computer Science Foundations"
+              items={[
+                "Data Structures & Algorithms",
+                "Object-Oriented Programming",
+                "Database Systems (SQL)",
+                "Operating Systems Basics",
+                "Computer Networks Fundamentals",
+              ]}
+            />
+          </div>
         </div>
       </section>
 
