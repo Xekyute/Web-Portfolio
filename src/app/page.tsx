@@ -103,7 +103,7 @@ export default function Home() {
               <p>
                 I&apos;m currently focused on improving my frontend skills while
                 continuing to explore functional programming and strengthening
-                my backend and DevOps fundamentals.
+                my backend and DevOps skills.
               </p>
             </div>
           </div>
