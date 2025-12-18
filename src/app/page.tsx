@@ -82,7 +82,7 @@ export default function Home() {
             {/* Text */}
             <div className="text-left space-y-5 text-base sm:text-lg lg:text-xl text-gray-300/90 leading-relaxed">
               <p>
-                I'm{" "}
+                I&apos;m{" "}
                 <span className="text-[rgb(224,224,224)] font-semibold">
                   Vicky Narotamo
                 </span>
@@ -101,7 +101,7 @@ export default function Home() {
               </p>
 
               <p>
-                I’m currently focused on improving my frontend skills while
+                I&apos;m currently focused on improving my frontend skills while
                 continuing to explore functional programming and strengthening
                 my backend and DevOps fundamentals.
               </p>
