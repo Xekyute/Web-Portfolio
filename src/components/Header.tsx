@@ -3,8 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { GeistMono } from "geist/font/mono";
-// Stagger delay for list items: 0ms, 60ms, 120ms...
-const itemDelay = (i: number) => `${i * 60}ms`;
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

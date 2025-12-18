@@ -1,5 +1,6 @@
 import ParticlesBackground from "@/components/ParticlesBackground";
 import { Mail, Linkedin, Github, Download, Send } from "lucide-react";
+import Image from "next/image";
 
 function SkillCard({ title, items }: { title: string; items: string[] }) {
   return (
@@ -58,11 +59,12 @@ export default function Home() {
             {/* Profile card */}
             <div className="flex flex-col items-center">
               <div className="group relative">
-                <img
+                <Image
                   src="/images/profile.jpg"
                   alt="Profile"
-                  className="h-56 w-56 rounded-2xl object-cover border-2 border-white/20 transition-all duration-300 ease-out group-hover:scale-105
-                  group-hover:border-white group-hover:shadow-[0_0_25px_rgba(255,255,255,0.25)]"
+                  width={224}
+                  height={224}
+                  className="h-56 w-56 rounded-2xl object-cover border-2 border-white/20 transition-all duration-300 ease-out group-hover:scale-105 group-hover:border-white group-hover:shadow-[0_0_25px_rgba(255,255,255,0.25)]"
                 />
               </div>
 
@@ -206,7 +208,7 @@ export default function Home() {
           </h2>
 
           <p className="mt-4 max-w-xl mx-auto text-center text-sm md:text-base text-gray-400 leading-relaxed">
-            Whether it’s a project, idea, or inquiry.
+            Whether it&apos;s a project, idea, or inquiry.
             <br />
             Use the form below to get in touch and I’ll respond as soon as
             possible.
