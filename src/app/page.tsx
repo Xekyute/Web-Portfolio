@@ -210,7 +210,7 @@ export default function Home() {
           <p className="mt-4 max-w-xl mx-auto text-center text-sm md:text-base text-gray-400 leading-relaxed">
             Whether it&apos;s a project, idea, or inquiry.
             <br />
-            Use the form below to get in touch and I’ll respond as soon as
+            Use the form below to get in touch and I&apos;ll respond as soon as
             possible.
           </p>
         </div>
