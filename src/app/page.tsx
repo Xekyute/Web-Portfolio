@@ -50,7 +50,7 @@ export default function Home() {
         className="relative z-10 bg-zinc-900 py-16 md:py-24 scroll-mt-24  border-t border-white/5"
       >
         <div className="container mx-auto max-w-6xl px-4 md:px-6">
-          <h2 className="section-heading text-center text-4xl md:text-5xl font-extrabold text-[rgb(224,224,224)]">
+          <h2 className="section-heading text-center text-4xl md:text-5xl">
             <span className="text-brand-light mr-2">/</span>
             About Me
           </h2>
@@ -177,7 +177,7 @@ export default function Home() {
         className="relative z-10 bg-zinc-900 py-16 md:py-24 scroll-mt-24"
       >
         <div className="mx-auto max-w-6xl px-4 md:px-6">
-          <h2 className="section-heading text-center text-4xl md:text-5xl font-extrabold text-[rgb(224,224,224)]">
+          <h2 className="section-heading text-center text-4xl md:text-5xl">
             <span className="text-brand-light mr-2">/</span>
             Experiences
           </h2>
@@ -189,7 +189,7 @@ export default function Home() {
         className="relative z-10 bg-zinc-900 py-16 md:py-24 scroll-mt-24"
       >
         <div className="mx-auto max-w-6xl px-4 md:px-6">
-          <h2 className="section-heading text-center text-4xl md:text-5xl font-extrabold text-[rgb(224,224,224)]">
+          <h2 className="section-heading text-center text-4xl md:text-5xl">
             <span className="text-brand-light mr-2">/</span>
             Projects
           </h2>
