@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 export const metadata: Metadata = {
   title: "Vicky Narotamo | Developer Portfolio",
   description:
-    "Portfolio of Vicky Narotamo — a Computer Science student building clean, scalable web experiences with Next.js, React, and Tailwind CSS.",
+    "Portfolio of Vicky Narotamo - a Computer Science student building clean, scalable web experiences with Next.js, React, and Tailwind CSS.",
   metadataBase: new URL("https://xekyute-portfolio.vercel.app"),
   openGraph: {
     title: "Vicky Narotamo | Developer Portfolio",
