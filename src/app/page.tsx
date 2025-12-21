@@ -196,34 +196,62 @@ export default function Home() {
           <form className="grid gap-6 md:grid-cols-2">
             {/* Name */}
             <div>
-              <label className="block text-sm text-gray-300 mb-2">Name</label>
+              <label
+                htmlFor="name"
+                className="block text-sm text-gray-300 mb-2"
+              >
+                Name
+              </label>
               <input
+                id="name"
+                name="name"
                 type="text"
+                autoComplete="name"
+                required
                 placeholder="John"
-                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3 text-[rgb(224,224,224)] placeholder:text-gray-500 outline-none transition focus:border-white/40"
+                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3
+                text-[rgb(224,224,224)] placeholder:text-gray-500
+                outline-none transition focus:border-white/40"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label className="block text-sm text-gray-300 mb-2">Email</label>
+              <label
+                htmlFor="email"
+                className="block text-sm text-gray-300 mb-2"
+              >
+                Email
+              </label>
               <input
+                id="email"
+                name="email"
                 type="email"
+                autoComplete="email"
+                required
                 placeholder="your@email.com"
-                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3 text-[rgb(224,224,224)] placeholder:text-gray-500 outline-none transition focus:border-white/40"
+                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3
+                text-[rgb(224,224,224)] placeholder:text-gray-500
+                outline-none transition focus:border-white/40"
               />
             </div>
 
             {/* Message */}
             <div className="md:col-span-2">
-              <label className="block text-sm text-gray-300 mb-2">
+              <label
+                htmlFor="message"
+                className="block text-sm text-gray-300 mb-2"
+              >
                 Message
               </label>
               <textarea
+                id="message"
+                name="message"
                 rows={6}
+                required
                 placeholder="Your message here..."
                 className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3
-                text-[rgb(224,224,224)] placeholder:text-gray-500 
+                text-[rgb(224,224,224)] placeholder:text-gray-500
                 outline-none transition focus:border-white/40"
               />
             </div>
