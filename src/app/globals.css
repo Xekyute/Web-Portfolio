@@ -80,3 +80,8 @@ body {
 textarea {
   resize: vertical;
 }
+
+/* ---------------- SCROLL ---------------- */
+html {
+  scroll-behavior: smooth;
+}
