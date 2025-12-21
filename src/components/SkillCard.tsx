@@ -12,7 +12,7 @@ export default function SkillCard({ title, items }: SkillCardProps) {
         {items.map((item) => (
           <span
             key={item}
-            className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-primary transition hover:border-white/35 hover:bg-white/10"
+            className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-body transition hover:border-white/35 hover:bg-white/10"
           >
             {item}
           </span>

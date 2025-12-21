@@ -163,8 +163,8 @@ const Header: React.FC = () => {
           tabIndex={-1}
           onClick={() => setIsMenuOpen(false)}
           className={[
-            "absolute left-0 right-0 top-full bottom-0 z-30 transition-opacity duration-300",
-            isMenuOpen ? "opacity-100" : "opacity-0",
+            "fixed inset-0 z-30 transition-opacity duration-300",
+            isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none",
           ].join(" ")}
         />
       )}

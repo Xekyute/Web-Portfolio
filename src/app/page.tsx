@@ -1,7 +1,8 @@
 import ParticlesBackground from "@/components/ParticlesBackground";
-import { Mail, Linkedin, Github, Download, Send } from "lucide-react";
+import { Mail, Linkedin, Github, Download } from "lucide-react";
 import Image from "next/image";
 import SkillCard from "@/components/SkillCard";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
@@ -18,16 +19,18 @@ export default function Home() {
         </div>
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#0a0a0a]" />
       </section>
+
       {/* About */}
       <section
         id="about"
-        className="relative z-10 bg-zinc-900 py-16 md:py-24 scroll-mt-24  border-t border-white/5"
+        className="relative z-10 bg-zinc-900 py-16 md:py-24 scroll-mt-24 border-t border-white/5"
       >
         <div className="container mx-auto max-w-6xl px-4 md:px-6">
           <h2 className="section-heading text-center text-4xl md:text-5xl">
             <span className="text-brand-light mr-2">/</span>
             About Me
           </h2>
+
           <div className="mt-12 grid gap-10 md:grid-cols-[280px_1fr] items-start">
             {/* Profile card */}
             <div className="flex flex-col items-center">
@@ -52,6 +55,7 @@ export default function Home() {
                 <span>Download Resume</span>
               </a>
             </div>
+
             {/* Text */}
             <div className="text-left space-y-5 text-base sm:text-lg lg:text-xl text-body leading-relaxed">
               <p>
@@ -82,6 +86,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* Skills */}
       <section
         id="skills"
@@ -93,7 +98,6 @@ export default function Home() {
             Skills
           </h2>
 
-          {/* Content */}
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             <SkillCard
               title="Frontend Development & Delivery"
@@ -144,6 +148,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* Experience */}
       <section
         id="experience"
@@ -156,6 +161,7 @@ export default function Home() {
           </h2>
         </div>
       </section>
+
       {/* Projects */}
       <section
         id="projects"
@@ -190,70 +196,10 @@ export default function Home() {
 
         {/* Form wrapper */}
         <div className="mt-12 mx-auto max-w-3xl">
-          <form className="grid gap-6 md:grid-cols-2">
-            {/* Name */}
-            <div>
-              <label htmlFor="name" className="label">
-                Name
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                autoComplete="name"
-                required
-                placeholder="John"
-                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3 text-primary placeholder:text-gray-500 outline-none transition focus:border-white/40"
-              />
-            </div>
-
-            {/* Email */}
-            <div>
-              <label htmlFor="email" className="label">
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                placeholder="your@email.com"
-                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3 text-primary placeholder:text-gray-500 outline-none transition focus:border-white/40"
-              />
-            </div>
-
-            {/* Message */}
-            <div className="md:col-span-2">
-              <label htmlFor="message" className="label">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={6}
-                required
-                placeholder="Your message here..."
-                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3 text-primary placeholder:text-gray-500 outline-none transition focus:border-white/40"
-              />
-            </div>
-
-            {/* Submit row */}
-            <div className="md:col-span-2 pt-2">
-              <button
-                type="submit"
-                className="w-full rounded-xl border border-brand-light/50 bg-zinc-950/40 py-3 text-brand-light transition-all duration-200 hover:bg-brand-light/15 hover:border-brand-light"
-              >
-                <span className="inline-flex items-center justify-center gap-2">
-                  <Send className="h-4 w-4" />
-                  Submit
-                </span>
-              </button>
-            </div>
-          </form>
+          <ContactForm />
         </div>
 
-        {/* Separator + Footer belong OUTSIDE the form */}
+        {/* Separator + Footer */}
         <div className="mt-20 border-t border-white/10" />
 
         <footer className="py-10">
