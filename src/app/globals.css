@@ -2,13 +2,13 @@
 
 /* ---------------- COMPONENTS ---------------- */
 @layer components {
+  /* Headings */
   .section-heading {
     @apply font-mono font-extrabold tracking-tight text-[rgb(224,224,224)];
     word-spacing: -0.35em;
   }
-}
 
-@layer components {
+  /* Text roles */
   .text-primary {
     @apply text-[rgb(224,224,224)];
   }
@@ -20,10 +20,11 @@
   .text-body {
     @apply text-gray-300/90;
   }
-}
 
-.label {
-  @apply block text-sm text-gray-300 mb-2;
+  /* Form labels */
+  .label {
+    @apply block text-sm text-gray-300 mb-2;
+  }
 }
 
 /* ---------------- ANIMATIONS ---------------- */

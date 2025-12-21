@@ -193,10 +193,7 @@ export default function Home() {
           <form className="grid gap-6 md:grid-cols-2">
             {/* Name */}
             <div>
-              <label
-                htmlFor="name"
-                className="block text-sm text-gray-300 mb-2"
-              >
+              <label htmlFor="name" className="label">
                 Name
               </label>
               <input
@@ -206,18 +203,13 @@ export default function Home() {
                 autoComplete="name"
                 required
                 placeholder="John"
-                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3
-                text-[rgb(224,224,224)] placeholder:text-gray-500
-                outline-none transition focus:border-white/40"
+                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3 text-primary placeholder:text-gray-500 outline-none transition focus:border-white/40"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm text-gray-300 mb-2"
-              >
+              <label htmlFor="email" className="label">
                 Email
               </label>
               <input
@@ -227,18 +219,13 @@ export default function Home() {
                 autoComplete="email"
                 required
                 placeholder="your@email.com"
-                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3
-                text-[rgb(224,224,224)] placeholder:text-gray-500
-                outline-none transition focus:border-white/40"
+                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3 text-primary placeholder:text-gray-500 outline-none transition focus:border-white/40"
               />
             </div>
 
             {/* Message */}
             <div className="md:col-span-2">
-              <label
-                htmlFor="message"
-                className="block text-sm text-gray-300 mb-2"
-              >
+              <label htmlFor="message" className="label">
                 Message
               </label>
               <textarea
@@ -247,9 +234,7 @@ export default function Home() {
                 rows={6}
                 required
                 placeholder="Your message here..."
-                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3
-                text-[rgb(224,224,224)] placeholder:text-gray-500
-                outline-none transition focus:border-white/40"
+                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3 text-primary placeholder:text-gray-500 outline-none transition focus:border-white/40"
               />
             </div>
 
