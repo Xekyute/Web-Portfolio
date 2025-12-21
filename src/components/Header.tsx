@@ -114,7 +114,7 @@ const Header: React.FC = () => {
         <div className="flex shrink-0 items-center">
           {/* Brand → Home (client-side) */}
           <Link
-            href="/"
+            href="/#home"
             className={`text-xl md:text-2xl font-bold tracking-tight text-brand-light hover:opacity-80 transition-opacity ${GeistMono.className}`}
             aria-label="Home"
             onClick={() => setIsMenuOpen(false)}
@@ -195,12 +195,12 @@ const Header: React.FC = () => {
               {" "}
               {/* dropdown in mono */}
               {[
-                { href: "#home", label: "Home" },
-                { href: "#about", label: "About" },
-                { href: "#skills", label: "Skills" },
-                { href: "#experience", label: "Experience" },
-                { href: "#projects", label: "Projects" },
-                { href: "#contact", label: "Contact" },
+                { href: "/#home", label: "Home" },
+                { href: "/#about", label: "About" },
+                { href: "/#skills", label: "Skills" },
+                { href: "/#experience", label: "Experience" },
+                { href: "/#projects", label: "Projects" },
+                { href: "/#contact", label: "Contact" },
               ].map((item, i) => (
                 <li
                   key={item.label}
