@@ -8,15 +8,13 @@ function SkillCard({ title, items }: { title: string; items: string[] }) {
       className="rounded-2xl border border-white/10 bg-zinc-950/30 p-6 md:p-8 
     transition-colors duration-300 hover:border-white"
     >
-      <h3 className="text-xl md:text-2xl font-bold text-[rgb(224,224,224)]">
-        {title}
-      </h3>
+      <h3 className="text-xl md:text-2xl font-bold text-primary">{title}</h3>
 
       <div className="mt-5 flex flex-wrap gap-2">
         {items.map((item) => (
           <span
             key={item}
-            className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-gray-200 
+            className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-primary 
             transition hover:border-white/35 hover:bg-white/10"
           >
             {item}
@@ -37,10 +35,8 @@ export default function Home() {
       >
         <ParticlesBackground />
         <div className="relative z-10 text-center">
-          <h1 className="text-6xl font-bold text-[rgb(224,224,224)]">
-            Vicky Narotamo
-          </h1>
-          <p className="text-gray-400 text-lg mt-4">Further Info</p>
+          <h1 className="text-6xl font-bold text-primary">Vicky Narotamo</h1>
+          <p className="text-muted text-lg mt-4">Further Info</p>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#0a0a0a]" />
       </section>
@@ -55,7 +51,6 @@ export default function Home() {
             About Me
           </h2>
           <div className="mt-12 grid gap-10 md:grid-cols-[280px_1fr] items-start">
-            {" "}
             {/* Profile card */}
             <div className="flex flex-col items-center">
               <div className="group relative">
@@ -73,17 +68,17 @@ export default function Home() {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group mt-4 inline-flex items-center justify-center rounded-xl border border-white/15 px-4 py-2 text-sm text-[rgb(224,224,224)] transition hover:border-white/40 hover:bg-white/5"
+                className="group mt-4 inline-flex items-center justify-center rounded-xl border border-white/15 px-4 py-2 text-sm text-primary transition hover:border-white/40 hover:bg-white/5"
               >
                 <Download className="mr-2 h-4 w-4" />
                 <span>Download Resume</span>
               </a>
             </div>
             {/* Text */}
-            <div className="text-left space-y-5 text-base sm:text-lg lg:text-xl text-gray-300/90 leading-relaxed">
+            <div className="text-left space-y-5 text-base sm:text-lg lg:text-xl text-body leading-relaxed">
               <p>
                 I&apos;m{" "}
-                <span className="text-[rgb(224,224,224)] font-semibold">
+                <span className="text-primary font-semibold">
                   Vicky Narotamo
                 </span>
                 , a Computer Science student who enjoys building clean, scalable
@@ -207,7 +202,7 @@ export default function Home() {
             Contact Me
           </h2>
 
-          <p className="mt-4 max-w-xl mx-auto text-center text-sm md:text-base text-gray-400 leading-relaxed">
+          <p className="mt-4 max-w-xl mx-auto text-center text-sm md:text-base text-muted leading-relaxed">
             Whether it&apos;s a project, idea, or inquiry.
             <br />
             Use the form below to get in touch and I&apos;ll respond as soon as
@@ -220,34 +215,32 @@ export default function Home() {
           <form className="grid gap-6 md:grid-cols-2">
             {/* Name */}
             <div>
-              <label className="block text-sm text-gray-300 mb-2">Name</label>
+              <label className="label">Name</label>
               <input
                 type="text"
                 placeholder="John"
-                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3 text-[rgb(224,224,224)] placeholder:text-gray-500 outline-none transition focus:border-white/40"
+                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3 text-primary placeholder:text-gray-500 outline-none transition focus:border-white/40"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label className="block text-sm text-gray-300 mb-2">Email</label>
+              <label className="label">Email</label>
               <input
                 type="email"
                 placeholder="your@email.com"
-                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3 text-[rgb(224,224,224)] placeholder:text-gray-500 outline-none transition focus:border-white/40"
+                className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3 text-primary placeholder:text-gray-500 outline-none transition focus:border-white/40"
               />
             </div>
 
             {/* Message */}
             <div className="md:col-span-2">
-              <label className="block text-sm text-gray-300 mb-2">
-                Message
-              </label>
+              <label className="label">Message</label>
               <textarea
                 rows={6}
                 placeholder="Your message here..."
                 className="w-full rounded-xl border border-white/10 bg-zinc-950/40 px-4 py-3
-                text-[rgb(224,224,224)] placeholder:text-gray-500 
+                text-primary placeholder:text-gray-500 
                 outline-none transition focus:border-white/40"
               />
             </div>
@@ -272,7 +265,7 @@ export default function Home() {
 
         <footer className="py-10">
           <div className="mx-auto max-w-6xl px-4 md:px-6 text-center space-y-6">
-            <div className="flex justify-center gap-6 text-gray-400">
+            <div className="flex justify-center gap-6 text-muted">
               <a
                 href="https://github.com/Xekyute"
                 target="_blank"
