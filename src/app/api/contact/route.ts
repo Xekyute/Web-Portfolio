@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { supabaseAdmin } from "@/lib/supabaseAdmin";
 
 export async function POST(req: Request) {
   try {
@@ -8,15 +9,23 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
 
-    // For now, just log it (proves backend works)
-    console.log("New contact message:", {
+    const { error } = await supabaseAdmin.from("contact_messages").insert({
       name,
       email,
       message,
     });
 
+    if (error) {
+      console.error(error);
+      return NextResponse.json(
+        { error: "Database insert failed" },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch (err) {
+    console.error(err);
     return NextResponse.json({ error: "Invalid request" }, { status: 500 });
   }
 }
