@@ -36,7 +36,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const subject = `New portfolio message from ${name}`;
+    const subject = `Xekyute portfolio · message from ${name}`;
 
     const { error: emailError } = await resend.emails.send({
       from,
