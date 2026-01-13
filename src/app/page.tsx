@@ -3,6 +3,7 @@ import { Mail, Linkedin, Github, Download } from "lucide-react";
 import Image from "next/image";
 import SkillCard from "@/components/SkillCard";
 import ContactForm from "@/components/ContactForm";
+import Typewriter from "@/components/Typewriter";
 
 export default function Home() {
   return (
@@ -14,8 +15,21 @@ export default function Home() {
       >
         <ParticlesBackground />
         <div className="relative z-10 text-center">
-          <h1 className="text-6xl font-bold text-primary">Vicky Narotamo</h1>
-          <p className="text-muted text-lg mt-4">Further Info</p>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-primary tracking-tight">
+            Vicky Narotamo
+          </h1>
+
+          <p className="text-muted text-xl md:text-2xl mt-6">
+            <Typewriter
+              className="text-primary"
+              words={[
+                "Frontend Developer",
+                "Building Clean Interfaces",
+                "Building Products",
+                "Open to New Challenges",
+              ]}
+            />
+          </p>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#0a0a0a]" />
       </section>
