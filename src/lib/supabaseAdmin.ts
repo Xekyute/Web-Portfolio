@@ -1,10 +1,13 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.SUPABASE_URL!;
-const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+export function getSupabaseAdmin() {
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceRoleKey, {
-  auth: {
-    persistSession: false,
-  },
-});
+  if (!url) throw new Error("SUPABASE_URL is missing");
+  if (!key) throw new Error("SUPABASE_SERVICE_ROLE_KEY is missing");
+
+  return createClient(url, key, {
+    auth: { persistSession: false },
+  });
+}
