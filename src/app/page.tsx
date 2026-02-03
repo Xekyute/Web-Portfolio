@@ -118,8 +118,8 @@ export default function Home() {
                 "React + Next.js (App Router)",
                 "TypeScript + Tailwind CSS",
                 "Next.js API Routes (serverless)",
-                "Supabase (Postgres) - storing submissions",
-                "Resend — email notifications",
+                "Supabase (Postgres)",
+                "Resend",
                 "Git & GitHub",
               ]}
             />
