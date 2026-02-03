@@ -23,9 +23,8 @@ export default function Home() {
             <Typewriter
               className="text-primary"
               words={[
-                "Frontend Developer",
+                "Software Developer",
                 "Building Clean Interfaces",
-                "Building Products",
                 "Open to New Challenges",
               ]}
             />
