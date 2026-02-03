@@ -113,27 +113,24 @@ export default function Home() {
 
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             <SkillCard
-              title="Frontend Development & Delivery"
+              title="Full Stack Development"
               items={[
-                "React.js",
-                "Next.js (App Router, File-Based Routing)",
-                "Tailwind CSS",
-                "Responsive, Component-Based UI",
-                "Visual Hierarchy, Typography & Layout",
-                "Git & GitHub (Iterative Development, Refactoring)",
-                "local → Production Workflow",
-                "User-First Design Decisions",
+                "React + Next.js (App Router)",
+                "TypeScript + Tailwind CSS",
+                "Next.js API Routes (serverless)",
+                "Supabase (Postgres) - storing submissions",
+                "Resend — email notifications",
+                "Git & GitHub",
               ]}
             />
 
             <SkillCard
               title="Programming & Software Development"
               items={[
-                "Scala (Functional Programming Concepts)",
-                "Clean, Modular Code Design",
-                "Debugging & Systematic Problem Solving",
-                "Python (Scripting, Backend APIs, Automation)",
-                "Building Small, Structured Applications",
+                "Java (OOP)",
+                "Scala (Functional Programming)",
+                "Python (Scripting / Automation)",
+                "Debugging & Problem Solving",
               ]}
             />
 
@@ -141,10 +138,9 @@ export default function Home() {
               title="Cybersecurity Foundations"
               items={[
                 "Data Protection & Privacy Fundamentals",
-                "GDPR & Regulatory Awareness",
-                "DPIA",
+                "GDPR Awareness",
+                "DPIA Fundamentals",
                 "Threat Modeling",
-                "Basic Risk Assessment & Mitigation Principles",
               ]}
             />
 
@@ -153,9 +149,9 @@ export default function Home() {
               items={[
                 "Data Structures & Algorithms",
                 "Object-Oriented Programming",
-                "Database Systems (SQL)",
                 "Operating Systems Basics",
-                "Computer Networks Fundamentals",
+                "Security Basics (RLS, safe configuration)",
+                "Database Systems (SQL)",
               ]}
             />
           </div>
@@ -208,7 +204,7 @@ export default function Home() {
         </div>
 
         {/* Form wrapper */}
-        <div className="mt-12 mx-auto max-w-3xl">
+        <div className="mt-12 container mx-auto max-w-3xl px-4 md:px-6">
           <ContactForm />
         </div>
 
