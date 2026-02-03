@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Xekyute Portfolio
 
-## Getting Started
+![Xekyute Portfolio](public/images/portfolio-hero.png)
 
-First, run the development server:
+A modern, full-stack developer portfolio built to showcase clean UI, scalable structure, and real backend functionality.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Live Demo:** https://xekyute-portfolio.vercel.app  
+**GitHub Repo:** https://github.com/Xekyute/Web-Portfolio
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This portfolio is more than a static website.  
+It includes real backend logic, secure data handling, and production deployment practices.
 
-## Learn More
+Key features include:
 
-To learn more about Next.js, take a look at the following resources:
+- Responsive, animated UI
+- Fully functional contact form
+- Database-backed message storage
+- Email notifications on form submission
+- Secure environment variable handling
+- Production deployment with Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Designed to grow as more projects and features are added.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Frontend**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js (App Router)
+- React
+- Tailwind CSS
+- TypeScript
+
+**Backend**
+
+- Next.js API Routes
+- Supabase (PostgreSQL)
+- Row Level Security (RLS)
+
+**Infrastructure**
+
+- Vercel (Deployment)
+- Resend (Email delivery)
+- Environment based config
+
+---
+
+## Contact Form Flow
+
+1. User submits the form
+2. Request handled via server side API route
+3. Message stored securely in Supabase
+4. Email notification sent via Resend
+5. Designed with extensibility for:
+   - Rate limiting
+   - IP logging
+   - Admin dashboards
+
+---
+
+## Future Improvements
+
+- Rate limiting & abuse protection
+- Admin dashboard for messages
+- Featured project sections
+- Authentication-protected routes
+- Performance & accessibility refinements
+
+---
+
+## Author
+
+**Vicky Narotamo**  
+Computer Science student & aspiring software engineer
